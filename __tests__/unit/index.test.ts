@@ -248,7 +248,6 @@ describe('buildCommand', () => {
       params: {id: 101, pkg: 'package1'}
     })
     const input = (command as ExecuteStatementCommand).input
-    console.log(input.parameters)
     expect(input.sql).toEqual(SQL)
     expect(input.continueAfterTimeout).toBe(true)
     expect(input.parameters).toEqual(
@@ -268,8 +267,6 @@ describe('buildCommand', () => {
       ]
     })
     const input = (command as BatchExecuteStatementCommand).input
-    console.log(input)
-    console.log(input.parameterSets)
     expect(input.sql).toEqual(SQL)
     expect(input.parameterSets?.length).toBe(2)
     expect(input.parameterSets).toEqual([
