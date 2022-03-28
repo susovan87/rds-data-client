@@ -1,31 +1,41 @@
 {
-  "name": "rds-data-client",
+  "name": "@susovan87/rds-data-client",
   "version": "0.1.0",
   "description": "A lightweight wrapper on @aws-sdk/client-rds-data that simplifies working with the Amazon Aurora Serverless Data API",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
     "format": "prettier --write '**/*.ts'",
     "format-check": "prettier --check '**/*.ts'",
     "lint": "eslint src/**/*.ts",
-    "package": "ncc build --source-map --license LICENSE.txt",
+    "package": "ncc build --source-map --license LICENSES.txt",
     "test:unit": "jest --collectCoverage ./__tests__/unit",
-    "all": "npm run build && npm run format && npm run lint && npm run package"
-  },
-  "eslintConfig": {
-    "rules": {
-        "no-var": 0
-    }
+    "test:integration": "jest ./__tests__/integration",
+    "all": "npm run build && npm run format && npm run lint && npm run package",
+    "prepare": "npm run build && npm run package"
   },
   "author": "Susovan Ghosh <susovan87@gmail.com>",
-  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/susovan87/rds-data-client.git"
+  },
+  "keywords": [
+    "aws-sdk-javascript-v3",
+    "rds-data-api",
+    "rds-data-client",
+    "aurora-data-api"
+  ],
+  "license": "MIT",
   "devDependencies": {
     "@types/node": "^16.10.5",
     "@types/underscore": "^1.11.4",
     "@typescript-eslint/parser": "^5.8.1",
     "@vercel/ncc": "^0.31.1",
     "eslint": "^8.11.0",
+    "eslint-plugin-github": "^4.3.6",
     "eslint-plugin-jest": "^26.1.2",
+    "eslint-plugin-prettier": "^4.0.0",
     "jest": "^27.2.5",
     "js-yaml": "^4.1.0",
     "prettier": "2.5.1",
