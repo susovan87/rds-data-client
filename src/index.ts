@@ -241,7 +241,16 @@ export class DBClient {
       (colMeta: ColumnMetadata) => colMeta.label || colMeta.name || ''
     )
     return records.map(row => {
-      const values = row.map(obj => Object.values(obj)[0])
+      const values = row.map(obj => {
+        if (obj?.isNull) {
+          return null
+        } else if (obj?.$unknown) {
+          if (isArray(obj?.$unknown) && obj?.$unknown?.length === 2)
+            return obj?.$unknown[1]
+        }
+
+        return Object.values(obj)[0]
+      })
       return this.arrayToObject(keys, values)
     })
   }

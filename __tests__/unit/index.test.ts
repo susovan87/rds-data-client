@@ -190,18 +190,14 @@ describe('formatRecords', () => {
           {stringValue: 'repo1'},
           {stringValue: '2022-02-28 10:58:05'}
         ],
-        [
-          {longValue: 3},
-          {stringValue: 'repo1'},
-          {stringValue: '2022-02-28 10:58:33'}
-        ]
+        [{longValue: 3}, {stringValue: 'repo1'}, {isNull: true}]
       ],
       [{label: 'id'}, {label: 'repo'}, {label: 'created_at'}]
     )
     expect(obj).toEqual([
       {id: 1, repo: 'repo1', created_at: '2022-02-28 10:57:03'},
       {id: 2, repo: 'repo1', created_at: '2022-02-28 10:58:05'},
-      {id: 3, repo: 'repo1', created_at: '2022-02-28 10:58:33'}
+      {id: 3, repo: 'repo1', created_at: null}
     ])
   })
 })

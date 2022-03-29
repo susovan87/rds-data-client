@@ -1,0 +1,7 @@
+{
+  "name": "example-db-client",
+  "version": "1.0.0",
+  "description": "",
+  "main": "simple-queries.js",
+  "type": "module"
+}

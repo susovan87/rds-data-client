@@ -1,6 +1,6 @@
 {
   "name": "@susovan87/rds-data-client",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A lightweight wrapper on @aws-sdk/client-rds-data that simplifies working with the Amazon Aurora Serverless Data API",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
